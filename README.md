@@ -24,18 +24,35 @@ These must always be located in the data folder.
 
 ### input.csv
 ### config.json
-### config.json
+All parameters are optional
 | Parameter                              | Impact                                      | Type    | Default |
 |----------------------------------------|---------------------------------------------|---------|---------|
 | minAge                                 | Minimum age of generated patients           | Integer |Not set  |
 | maxAge                                 | Maximum age of generated patients           | Integer |Not set  |
-| maxDrugs                               | Maximum number of drugs                     | Integer |         |
-| snpsPerDrugType                        | SNPs per drug type                          | Integer |         |
-| percentageOfSnpsForDrugPerDrugType     | Percentage of SNPs for drug per drug type   | Integer |         |
-| baseDrugEffectiveness                  | Base drug effectiveness                     | Double  |         |
-| negativePriorDrugEvent                 | Negative prior drug event                   | Double  |         |
-| positivePriorDrugEvent                 | Positive prior drug event                   | Double  |         |
-| gender                                 | Gender                                      | List    |         |
-| countries                              | List of countries                           | List    |         |
-| positiveResponseAnotherDrug            | Positive response to another drug           | Double  |         |
-| negativeResponseAnotherDrug            | Negative response to another drug           | Double  |         |
+| maxDrugs                               | Maximum number of drugs                     | Integer |  5       |
+| snpsPerDrugType                        | SNPs per drug type (SNPs that will have an effect on the response of the drugtype)                         | Integer |         |
+| percentageOfSnpsForDrugPerDrugType     | Percentage of SNPs for drug per drug type   | Integer |  80       |
+| baseDrugEffectiveness                  | Base drug effectiveness                     | Double  |   0.5      |
+| negativePriorDrugEvent                 | Negative prior drug event decreases chance of next drug having positive response by...  | Double  |  0.1       |
+| positivePriorDrugEvent                 | Negative prior drug event decreases chance of next drug having positive response by...  | Double  |  0,.1       |
+| gender                                 | Gender                                      | String ("MALE" or "FEMALE")  | Not Set (means both are included)|
+| countries                              | List of countries                           | List    |  All available |
+| positiveResponseAnotherDrug            | If prior response was positive chance to order another drug| Double  | 0.05 |
+| negativeResponseAnotherDrug            | If prior response was negative chance to order another drug| Double  | 0.8  |
+
+```json
+{
+    "minAge":14,
+    "maxAge":90,
+    "maxDrugs":3,
+    "snpsPerDrugType":100,
+    "percentageOfSnpsForDrugPerDrugType":80,
+    "baseDrugEffectiveness":0.5,
+    "negativePriorDrugEvent":-0.1,
+    "positivePriorDrugEvent":0.1,
+    "gender":"MALE",
+    "countries":["France, Spain"],
+    "positiveResponseAnotherDrug": 0.05,
+    "negativeResponseAnotherDrug":0.8
+}
+```
