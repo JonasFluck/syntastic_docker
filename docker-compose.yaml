@@ -1,0 +1,8 @@
+version: '3.8'
+
+services:
+  java-app:
+    image: jonasfluck/syntastic:latest  # Use the remote image
+    volumes:
+      - ./data:/app/data  # Mount the data folder to the container
+    command: python3 /app/init.py  # Run the Python script to generate and execute the Java command
