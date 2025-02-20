@@ -24,7 +24,18 @@ These must always be located in the data folder.
 
 ### input.csv
 ### config.json
-| Parameter | Impact | Type | Default |
-|----------|----------|----------|----------|
-| Data 1   | Data 2   | Data 3   |Data 3   |
-| Data 4   | Data 5   | Data 6   |Data 6   |
+### config.json
+| Parameter                              | Impact                                      | Type    | Default |
+|----------------------------------------|---------------------------------------------|---------|---------|
+| minAge                                 | Minimum age of generated patients           | Integer |Not set  |
+| maxAge                                 | Maximum age of generated patients           | Integer |Not set  |
+| maxDrugs                               | Maximum number of drugs                     | Integer |         |
+| snpsPerDrugType                        | SNPs per drug type                          | Integer |         |
+| percentageOfSnpsForDrugPerDrugType     | Percentage of SNPs for drug per drug type   | Integer |         |
+| baseDrugEffectiveness                  | Base drug effectiveness                     | Double  |         |
+| negativePriorDrugEvent                 | Negative prior drug event                   | Double  |         |
+| positivePriorDrugEvent                 | Positive prior drug event                   | Double  |         |
+| gender                                 | Gender                                      | List    |         |
+| countries                              | List of countries                           | List    |         |
+| positiveResponseAnotherDrug            | Positive response to another drug           | Double  |         |
+| negativeResponseAnotherDrug            | Negative response to another drug           | Double  |         |
